@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Expense Tracker</string>
+    <string name="app_name">Expenses Tracker</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Expenses Tracker</string>
+    <string name="nav_header_subtitle">Manage your budget and Track your Expenses</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="total_expenses">Total Expenses</string>
+    <string name="product_category">Product Category:</string>
+    <string name="content_description_end_icon">write the category name</string>
+    <string name="helper_text">"ex.: Food/Gas,...etc "</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_category_hint">Product Category:</string>
+    <string name="transaction_date_hint">Transaction Date:</string>
+    <string name="monthly_expenses_in">Monthly Expenses in :</string>
 </resources>
