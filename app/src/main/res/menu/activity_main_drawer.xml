@@ -8,13 +8,16 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
+
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_budgetManager"
+            android:icon="@drawable/ic_dollar"
+            android:title="@string/budget_manager" />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_budgetPlanner"
+            android:icon="@drawable/ic_dollar"
+            android:title="@string/budget_planner" />
     </group>
+
 </menu>

@@ -50,19 +50,25 @@ public class BudgetCategoryManager
         return null;
     }
 
-    static public boolean EditCategoryEnvelop(String category)
+    static public boolean editCategoryEnvelop(String category , double budget)
     {
-        throw new UnsupportedOperationException();
+        for (int i = 0 ; i < budgetCategories.size() ; i++)
+        {
+            if(budgetCategories.get(i).getName().equalsIgnoreCase(category))
+            {
+                budgetCategories.get(i).setMaxBudget(budget);
+                return true;
+            }
+        }
+        return false;
     }
 
-    static public boolean addNewBudgetCategory(String category)
+    static public boolean addNewBudgetCategory(String name , double budget)
     {
-        throw new UnsupportedOperationException();
-    }
+        BudgetCategory newBudgetCategory = new BudgetCategory(name , budget);
+        budgetCategories.add(newBudgetCategory);
 
-    static public boolean deleteBudgetCategory(String category)
-    {
-        throw new UnsupportedOperationException();
+        return true;
     }
 
     static public boolean addToCurrentExpenses(String category , double addedValue)

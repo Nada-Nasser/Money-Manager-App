@@ -12,14 +12,15 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.expensestracker.mainactivity.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_budgetManager"
+        android:name="com.example.expensestracker.mainactivity.ui.budgetmanager.BudgetManagerFragment"
+        android:label="@string/budget_manager"
+        tools:layout="@layout/fragment_budget_manager" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.expensestracker.mainactivity.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_budgetPlanner"
+        android:name="com.example.expensestracker.mainactivity.ui.budgetplanner.BudgetPlannerFragment"
+        android:label="@string/budget_planner"
+        tools:layout="@layout/fragment_budget_planner" />
+
 </navigation>

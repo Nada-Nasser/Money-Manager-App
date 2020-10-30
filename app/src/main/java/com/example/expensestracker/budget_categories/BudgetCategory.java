@@ -9,6 +9,7 @@ public class BudgetCategory
     public BudgetCategory(String name, double maxBudget) {
         this.name = name;
         this.maxBudget = maxBudget;
+        currentBudget = 0;
     }
 
     public String getName() {

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#d4d3d3"
     android:orientation="vertical"
-    tools:context=".mainactivity.ui.home.HomeFragment">
+    tools:context=".mainactivity.ui.expensestracker.ExpensesTrackerFragment">
 
     <RelativeLayout
         android:id="@+id/home_header"
@@ -24,7 +24,7 @@
             android:layout_marginStart="21dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/category"
+            android:text="category"
             android:textAlignment="center"
             android:textSize="12.0sp" />
 

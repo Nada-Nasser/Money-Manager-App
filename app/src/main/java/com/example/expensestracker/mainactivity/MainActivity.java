@@ -2,9 +2,11 @@ package com.example.expensestracker.mainactivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
+import com.example.expensestracker.BudgetCategoryInfoFragment;
 import com.example.expensestracker.R;
 import com.example.expensestracker.budget_categories.BudgetCategoryManager;
 import com.example.expensestracker.transactions.TransactionManager;
@@ -12,6 +14,8 @@ import com.example.expensestracker.transactions.ui.AddTransactionActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,11 +27,7 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
-    //TODO Category manager
-
-    //TODO Budget Planner
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             // Passing each menu ID as a set of Ids because each
             // menu should be considered as top level destinations.
             mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                    R.id.nav_home, R.id.nav_budgetManager,R.id.nav_budgetPlanner)
                     .setDrawerLayout(drawer)
                     .build();
 
@@ -81,9 +81,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.add_Budget:
+                addNewBudgetCategory();
+                return true;
+
+        }
+        return false;
+    }
+
+    @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    void addNewBudgetCategory()
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        BudgetCategoryInfoFragment budgetCategoryInfoFragment = new BudgetCategoryInfoFragment();
+
+        budgetCategoryInfoFragment.show(fragmentManager,"New budget");
+    }
+
+    // TODO //1- Budgets Planner (income and plans) , 2- Budget Analysis (visualize budgets.current expenses)) ,
 }

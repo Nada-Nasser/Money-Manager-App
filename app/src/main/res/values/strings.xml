@@ -8,7 +8,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Expenses Tracker</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="total_expenses">Total Expenses</string>
@@ -20,4 +20,18 @@
     <string name="product_category_hint">Product Category:</string>
     <string name="transaction_date_hint">Transaction Date:</string>
     <string name="monthly_expenses_in">Monthly Expenses in :</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="budget_manager">Budget Categories</string>
+    <string name="budget_planner">Budget Planner</string>
+    <string name="category">category Name</string>
+    <string name="your_expenses_this_month">Your Expenses this month</string>
+    <string name="budget">Budget</string>
+    <string name="add_budget_category">add budget category</string>
+    <string name="add_income">Add Income</string>
+    <string name="category_price">Budget</string>
+    <string name="price_helper">write the maximum amount of money you can spend in this category</string>
+    <string name="new_budget_category_info">Budget Category Info</string>
+    <string name="submit">Submit</string>
+    <string name="errorMsg">You Can not change the category name</string>
+
 </resources>
