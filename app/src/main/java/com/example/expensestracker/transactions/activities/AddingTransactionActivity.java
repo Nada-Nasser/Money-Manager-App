@@ -1,4 +1,4 @@
-package com.example.expensestracker.transactions.ui;
+package com.example.expensestracker.transactions.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AddTransactionActivity extends AppCompatActivity {
+public class AddingTransactionActivity extends AppCompatActivity {
 
     Spinner productCategorySpinner;
     EditText productNameTextField;
@@ -69,6 +69,7 @@ public class AddTransactionActivity extends AppCompatActivity {
             TransactionManager.addNewTransaction(transaction);
 
             makeLongToast(transaction.toString());
+            finish();
         }
         catch (Exception e)
         {

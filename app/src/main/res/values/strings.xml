@@ -33,5 +33,6 @@
     <string name="new_budget_category_info">Budget Category Info</string>
     <string name="submit">Submit</string>
     <string name="errorMsg">You Can not change the category name</string>
+    <string name="budget_analysis">Budget Analysis</string>
 
 </resources>

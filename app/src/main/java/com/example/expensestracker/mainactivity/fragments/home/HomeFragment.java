@@ -1,4 +1,4 @@
-package com.example.expensestracker.mainactivity.ui.expensestracker;
+package com.example.expensestracker.mainactivity.fragments.home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -18,18 +18,18 @@ import com.example.expensestracker.budget_categories.ui.BudgetCategoryListAdapte
 
 import java.util.ArrayList;
 
-public class ExpensesTrackerFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     TextView totalExpensesTextView;
     ListView budgetCategoryListView;
 
-    BudgetCategoryListAdapter budgetCategoryListAdapter;
+    static BudgetCategoryListAdapter budgetCategoryListAdapter;
     ArrayList<BudgetCategory> budgetCategories;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_expenses_tracker, container, false);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
         final Context context = getActivity().getApplicationContext();
 
         totalExpensesTextView = root.findViewById(R.id.total_expenses);
@@ -61,6 +61,11 @@ public class ExpensesTrackerFragment extends Fragment {
         }
     }
 
-
-
+    public static void refresh()
+    {
+        if(budgetCategoryListAdapter!=null)
+        {
+            budgetCategoryListAdapter.notifyDataSetChanged();
+        }
+    }
 }

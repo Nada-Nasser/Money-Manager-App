@@ -1,6 +1,5 @@
-package com.example.expensestracker.mainactivity.ui.budgetmanager;
+package com.example.expensestracker.mainactivity.fragments.budgetmanager;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -10,17 +9,16 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.expensestracker.BudgetCategoryInfoFragment;
+import com.example.expensestracker.budget_categories.ui.BudgetCategoryInfoFragment;
+
 import com.example.expensestracker.R;
 import com.example.expensestracker.budget_categories.BudgetCategory;
 import com.example.expensestracker.budget_categories.BudgetCategoryManager;
-import com.example.expensestracker.budget_categories.ui.BudgetCategoryListAdapter;
 
 import java.util.ArrayList;
 

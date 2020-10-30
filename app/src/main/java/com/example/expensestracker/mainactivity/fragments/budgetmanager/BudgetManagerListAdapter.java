@@ -1,4 +1,4 @@
-package com.example.expensestracker.mainactivity.ui.budgetmanager;
+package com.example.expensestracker.mainactivity.fragments.budgetmanager;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -42,7 +42,7 @@ public class BudgetManagerListAdapter extends BaseAdapter
     public View getView(int i, View view, ViewGroup viewGroup)
     {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-        view = inflater.inflate(R.layout.budget_manager_list_item, null);
+        view = inflater.inflate(R.layout.list_item_budget_manager, null);
 
         final BudgetCategory budgetCategory = budgetCategories.get(i);
 

@@ -15,9 +15,16 @@
             android:title="@string/budget_manager" />
 
         <item
+            android:id="@+id/nav_budget_analysis"
+            android:icon="@drawable/ic_dollar"
+            android:title="@string/budget_analysis" />
+
+        <item
             android:id="@+id/nav_budgetPlanner"
             android:icon="@drawable/ic_dollar"
             android:title="@string/budget_planner" />
+
+
     </group>
 
 </menu>

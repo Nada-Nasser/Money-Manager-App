@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#d4d3d3"
     android:orientation="vertical"
-    tools:context=".mainactivity.ui.home.HomeFragment">
+    tools:context=".mainactivity.fragments.home.HomeFragment">
 
     <RelativeLayout
         android:id="@+id/home_header"

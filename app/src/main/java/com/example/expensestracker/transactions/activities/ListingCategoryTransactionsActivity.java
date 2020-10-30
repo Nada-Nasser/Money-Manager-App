@@ -1,4 +1,4 @@
-package com.example.expensestracker.transactions.ui;
+package com.example.expensestracker.transactions.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +9,11 @@ import android.widget.TextView;
 import com.example.expensestracker.R;
 import com.example.expensestracker.transactions.Transaction;
 import com.example.expensestracker.transactions.TransactionManager;
+import com.example.expensestracker.transactions.ui.TransactionListAdapter;
 
 import java.util.ArrayList;
 
-public class CategoryTransactionActivity extends AppCompatActivity
+public class ListingCategoryTransactionsActivity extends AppCompatActivity
 {
     TextView selectedCategoryName;
     ListView transactionListView;

@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.expensestracker.R;
-import com.example.expensestracker.budget_categories.BudgetCategory;
 import com.example.expensestracker.transactions.Transaction;
 
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class TransactionListAdapter extends BaseAdapter
     public View getView(int i, View view, ViewGroup viewGroup)
     {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-        view = inflater.inflate(R.layout.transaction_list_item, null);
+        view = inflater.inflate(R.layout.list_item_transaction, null);
 
         final Transaction transaction = transactionList.get(i);
 

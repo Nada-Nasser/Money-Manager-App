@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.expensestracker">
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +12,13 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".transactions.ui.CategoryTransactionActivity"
+            android:name=".transactions.activities.ListingCategoryTransactionsActivity"
             android:label="Your Expenses">
         </activity>
 
 
         <activity
-            android:name=".transactions.ui.AddTransactionActivity"
+            android:name=".transactions.activities.AddingTransactionActivity"
             android:label="Add New Transaction">
         </activity>
 

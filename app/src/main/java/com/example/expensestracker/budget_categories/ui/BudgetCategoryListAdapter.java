@@ -10,11 +10,10 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.expensestracker.R;
 import com.example.expensestracker.budget_categories.BudgetCategory;
-import com.example.expensestracker.transactions.ui.CategoryTransactionActivity;
+import com.example.expensestracker.transactions.activities.ListingCategoryTransactionsActivity;
 
 import java.util.ArrayList;
 
@@ -48,7 +47,7 @@ public class BudgetCategoryListAdapter extends BaseAdapter
     public View getView(int i, View view, ViewGroup viewGroup)
     {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-        view = inflater.inflate(R.layout.budget_categoty_list_item, null);
+        view = inflater.inflate(R.layout.list_item_budget_categoty, null);
 
         final BudgetCategory budgetCategory = budgetCategories.get(i);
 
@@ -74,7 +73,7 @@ public class BudgetCategoryListAdapter extends BaseAdapter
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent( context , CategoryTransactionActivity.class);
+                    Intent intent = new Intent( context , ListingCategoryTransactionsActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("category", budgetCategory.getName());
                     context.startActivity(intent);

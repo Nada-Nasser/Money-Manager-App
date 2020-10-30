@@ -6,11 +6,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
-import com.example.expensestracker.BudgetCategoryInfoFragment;
+import com.example.expensestracker.budget_categories.ui.BudgetCategoryInfoFragment;
 import com.example.expensestracker.R;
 import com.example.expensestracker.budget_categories.BudgetCategoryManager;
 import com.example.expensestracker.transactions.TransactionManager;
-import com.example.expensestracker.transactions.ui.AddTransactionActivity;
+import com.example.expensestracker.transactions.activities.AddingTransactionActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
 
-                    Intent intent = new Intent(getApplicationContext(), AddTransactionActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AddingTransactionActivity.class);
                     startActivity(intent);
                 }
             });
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             // Passing each menu ID as a set of Ids because each
             // menu should be considered as top level destinations.
             mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_home, R.id.nav_budgetManager,R.id.nav_budgetPlanner)
+                    R.id.nav_home, R.id.nav_budgetManager , R.id.nav_budget_analysis ,R.id.nav_budgetPlanner)
                     .setDrawerLayout(drawer)
                     .build();
 

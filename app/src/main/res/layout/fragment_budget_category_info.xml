@@ -6,8 +6,7 @@
     android:layout_width="350dp"
     android:layout_height="350dp"
     android:layout_gravity="center"
-    android:orientation="vertical"
-    tools:context=".BudgetCategoryInfoFragment">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/header_tv"

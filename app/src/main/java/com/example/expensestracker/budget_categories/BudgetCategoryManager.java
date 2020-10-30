@@ -1,6 +1,7 @@
 package com.example.expensestracker.budget_categories;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 // TODO Deal with local database
 public class BudgetCategoryManager
@@ -18,6 +19,16 @@ public class BudgetCategoryManager
         budgetCategories.add(new BudgetCategory("Debt Payoff" ,200 ));
 
         return true;
+    }
+
+    public static HashMap<String , Double> getCategoryExpensesMap()
+    {
+        HashMap<String , Double> output = new HashMap<>();
+        for (int i = 0 ; i < budgetCategories.size() ; i++)
+        {
+            output.put(budgetCategories.get(i).getName() ,budgetCategories.get(i).getCurrentBudget());
+        }
+        return output;
     }
 
     public static ArrayList<BudgetCategory> getBudgetCategories() {

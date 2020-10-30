@@ -1,4 +1,4 @@
-package com.example.expensestracker;
+package com.example.expensestracker.budget_categories.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,17 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.expensestracker.R;
 import com.example.expensestracker.budget_categories.BudgetCategory;
 import com.example.expensestracker.budget_categories.BudgetCategoryManager;
-import com.example.expensestracker.mainactivity.ui.budgetmanager.BudgetManagerFragment;
-import com.example.expensestracker.mainactivity.ui.home.HomeFragment;
+import com.example.expensestracker.mainactivity.fragments.budgetmanager.BudgetManagerFragment;
+import com.example.expensestracker.mainactivity.fragments.home.HomeFragment;
 
 public class BudgetCategoryInfoFragment extends DialogFragment implements View.OnClickListener
 {
