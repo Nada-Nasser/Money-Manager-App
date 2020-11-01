@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.expensestracker.budget_categories.ui.BudgetCategoryInfoFragment;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 public class BudgetManagerFragment extends Fragment {
 
     ListView budgetCategoryListView;
+    Button addCategoryButton;
 
     static BudgetManagerListAdapter budgetManagerListAdapter;
     ArrayList<BudgetCategory> budgetCategories;
@@ -40,6 +42,7 @@ public class BudgetManagerFragment extends Fragment {
         fragmentActivity = (FragmentActivity) getActivity();
         try {
             budgetCategoryListView = root.findViewById(R.id.budget_manager_lv);
+            addCategoryButton = root.findViewById(R.id.add_category_button);
 
             budgetCategories = new ArrayList<>();
             budgetCategories = BudgetCategoryManager.getBudgetCategories();
@@ -54,6 +57,13 @@ public class BudgetManagerFragment extends Fragment {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     BudgetCategory selectedBudgetCategory = budgetCategories.get(i);
                     editBudgetCategory(selectedBudgetCategory);
+                }
+            });
+
+            addCategoryButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    addNewBudgetCategory();
                 }
             });
 
@@ -95,6 +105,15 @@ public class BudgetManagerFragment extends Fragment {
         {
             budgetManagerListAdapter.notifyDataSetChanged();
         }
+    }
+
+    void addNewBudgetCategory()
+    {
+        FragmentManager fragmentManager = fragmentActivity.getSupportFragmentManager();
+
+        BudgetCategoryInfoFragment budgetCategoryInfoFragment = new BudgetCategoryInfoFragment();
+
+        budgetCategoryInfoFragment.show(fragmentManager,"New budget");
     }
 
 

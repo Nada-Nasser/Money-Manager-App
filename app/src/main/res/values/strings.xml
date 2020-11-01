@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Expenses Tracker</string>
+    <string name="app_name">My Money Manager</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Expenses Tracker</string>
-    <string name="nav_header_subtitle">Manage your budget and Track your Expenses</string>
+    <string name="nav_header_subtitle">Manage your budget, Track your Expenses and Control your Plans</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -19,14 +19,13 @@
     <string name="product_price">Product Price</string>
     <string name="product_category_hint">Product Category:</string>
     <string name="transaction_date_hint">Transaction Date:</string>
-    <string name="monthly_expenses_in">Monthly Expenses in :</string>
+    <string name="monthly_expenses_in">this Month Expenses in :</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="budget_manager">Budget Categories</string>
-    <string name="budget_planner">Budget Planner</string>
+    <string name="budget_planner">Budget Plans</string>
     <string name="category">category Name</string>
-    <string name="your_expenses_this_month">Your Expenses this month</string>
     <string name="budget">Budget</string>
-    <string name="add_budget_category">add budget category</string>
+    <string name="add_budget_category">Add budget category</string>
     <string name="add_income">Add Income</string>
     <string name="category_price">Budget</string>
     <string name="price_helper">write the maximum amount of money you can spend in this category</string>
@@ -34,5 +33,22 @@
     <string name="submit">Submit</string>
     <string name="errorMsg">You Can not change the category name</string>
     <string name="budget_analysis">Budget Analysis</string>
+    <string name="add_to_your_wallet">Add to your Wallet</string>
+    <string name="money_amount">Money Amount</string>
+    <string name="your_wallet">Your Wallet</string>
+    <string name="close">Close</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="your_wallet_contains_enough_money_for_this_plan">Your wallet contains enough money for this plan</string>
+    <string name="the_deadline_of_this_plan_has_passed">the deadline of this plan has passed</string>
+    <string name="plan_title">Plan Title</string>
+    <string name="needed_budget">Plan\'s Budget</string>
+    <string name="plan_deadline_date">Plan Deadline Date :</string>
+    <string name="add_plan">Add Plan</string>
+    <string name="add_transaction">Add Transaction</string>
+    <string name="plan_desc">Plan Description</string>
+    <string name="edit_plan">Edit Plan</string>
+    <string name="your_expenses_this_month">Your Expenses this month</string>
+    <string name="month_s_expenses">Month\'s Expenses</string>
+    <string name="new_app_name">Money Manager</string>
 
 </resources>

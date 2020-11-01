@@ -2,6 +2,7 @@ package com.example.expensestracker.mainactivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -9,8 +10,16 @@ import android.view.Menu;
 import com.example.expensestracker.budget_categories.ui.BudgetCategoryInfoFragment;
 import com.example.expensestracker.R;
 import com.example.expensestracker.budget_categories.BudgetCategoryManager;
+import com.example.expensestracker.budgetplanner.PlansManager;
+import com.example.expensestracker.dbmanagment.BudgetCategoriesTable;
+import com.example.expensestracker.dbmanagment.DatabaseController;
+import com.example.expensestracker.globalOperations.DateStringFormatter;
+import com.example.expensestracker.monthestracker.MonthsTracker;
 import com.example.expensestracker.transactions.TransactionManager;
 import com.example.expensestracker.transactions.activities.AddingTransactionActivity;
+import com.example.expensestracker.usermoney.UserWallet;
+import com.example.expensestracker.usermoney.ui.AddingIncomeFragment;
+import com.example.expensestracker.usermoney.ui.UserWalletFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -24,17 +33,26 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    
+    DatabaseController databaseController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
+
+            databaseController = new DatabaseController(this);
             BudgetCategoryManager.LoadCategoryEnvelop();
+            MonthsTracker.checkUpdates(this);
             TransactionManager.loadTransactions();
+            PlansManager.loadPlans();
+            UserWallet.loadUserMoney(this);
+
 
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
@@ -85,13 +103,17 @@ public class MainActivity extends AppCompatActivity {
     {
         switch (item.getItemId())
         {
-            case R.id.add_Budget:
-                addNewBudgetCategory();
+            case R.id.add_income:
+                addIncome();
+                return true;
+            case R.id.user_wallet:
+                showUserWallet();
                 return true;
 
         }
-        return false;
+        return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -100,14 +122,22 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    void addNewBudgetCategory()
-    {
+
+    private void addIncome() {
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        BudgetCategoryInfoFragment budgetCategoryInfoFragment = new BudgetCategoryInfoFragment();
+        AddingIncomeFragment addingIncomeFragment = new AddingIncomeFragment();
 
-        budgetCategoryInfoFragment.show(fragmentManager,"New budget");
+        addingIncomeFragment.show(fragmentManager,"add income");
     }
 
-    // TODO //1- Budgets Planner (income and plans) , 2- Budget Analysis (visualize budgets.current expenses)) ,
+    private void showUserWallet() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        UserWalletFragment userWalletFragment = new UserWalletFragment();
+
+        userWalletFragment.show(fragmentManager,"add income");
+    }
+
+    // TODO // Database contain(plans , transactions , budget categories)
 }

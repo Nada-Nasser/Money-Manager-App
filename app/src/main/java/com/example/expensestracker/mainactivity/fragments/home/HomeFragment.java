@@ -43,6 +43,8 @@ public class HomeFragment extends Fragment {
         budgetCategoryListView.setAdapter(budgetCategoryListAdapter);
         budgetCategoryListAdapter.notifyDataSetChanged();
 
+        totalExpensesTextView.setText("$ "+String.valueOf(BudgetCategoryManager.getTotalExpenses()));
+
         return root;
     }
 
@@ -50,6 +52,7 @@ public class HomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
         budgetCategoryListAdapter.notifyDataSetChanged();
+        totalExpensesTextView.setText("$ "+String.valueOf(BudgetCategoryManager.getTotalExpenses()));
     }
 
     @Override
@@ -58,6 +61,7 @@ public class HomeFragment extends Fragment {
         if(budgetCategoryListAdapter!=null)
         {
             budgetCategoryListAdapter.notifyDataSetChanged();
+            totalExpensesTextView.setText("$ "+String.valueOf(BudgetCategoryManager.getTotalExpenses()));
         }
     }
 

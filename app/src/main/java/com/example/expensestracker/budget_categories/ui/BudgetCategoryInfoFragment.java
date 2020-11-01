@@ -52,7 +52,9 @@ public class BudgetCategoryInfoFragment extends DialogFragment implements View.O
         if (!isNew)
         {
             budgetCategoryNameEditText.setText(budgetCategory.getName());
-            budgetCategoryNameEditText.setEnabled(false);
+
+  //          budgetCategoryNameEditText.setEnabled(false);
+
             budgetCategoryNameEditText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -79,7 +81,7 @@ public class BudgetCategoryInfoFragment extends DialogFragment implements View.O
         if (isNew)
             BudgetCategoryManager.addNewBudgetCategory(budgetCategoryName , budget);
         else
-            BudgetCategoryManager.editCategoryEnvelop(budgetCategoryName , budget);
+            BudgetCategoryManager.editCategoryEnvelop(budgetCategory.getID() , budgetCategoryName , budget);
 
         HomeFragment.refresh();
         BudgetManagerFragment.refresh();

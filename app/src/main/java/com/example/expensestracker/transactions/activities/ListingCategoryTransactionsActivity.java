@@ -7,6 +7,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.expensestracker.R;
+import com.example.expensestracker.budget_categories.BudgetCategoryManager;
 import com.example.expensestracker.transactions.Transaction;
 import com.example.expensestracker.transactions.TransactionManager;
 import com.example.expensestracker.transactions.ui.TransactionListAdapter;
@@ -27,19 +28,23 @@ public class ListingCategoryTransactionsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_transaction);
+        try {
+            selectedCategoryName = findViewById(R.id.selected_category_name);
+            transactionListView = findViewById(R.id.transaction_lv);
 
-        selectedCategoryName = findViewById(R.id.selected_category_name);
-        transactionListView = findViewById(R.id.transaction_lv);
+            Bundle bundle = getIntent().getExtras();
+            categoryName = bundle.getString("category", "none");
+            selectedCategoryName.setText(categoryName);
 
-        Bundle bundle = getIntent().getExtras();
-        categoryName = bundle.getString("category" , "none");
-        selectedCategoryName.setText(categoryName);
-
-        transactions = TransactionManager.getTransactionsByCategory(categoryName);
-        transactionListAdapter = new TransactionListAdapter(getApplicationContext() , transactions);
-        transactionListView.setAdapter(transactionListAdapter);
-        transactionListAdapter.notifyDataSetChanged();
-
+            int id= BudgetCategoryManager.getCategoryIDFromName(categoryName);
+            transactions = TransactionManager.getTransactionsByCategoryID(id);
+            transactionListAdapter = new TransactionListAdapter(getApplicationContext(), transactions);
+            transactionListView.setAdapter(transactionListAdapter);
+            transactionListAdapter.notifyDataSetChanged();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override

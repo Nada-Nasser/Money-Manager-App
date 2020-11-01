@@ -3,4 +3,6 @@
     <color name="colorPrimary">#FF9800</color>
     <color name="colorPrimaryDark">#FF5722</color>
     <color name="colorAccent">#FFC107</color>
+    <color name="doneColor">#BDE68E</color>
+    <color name="worryColor">#ECB1B1</color>
 </resources>

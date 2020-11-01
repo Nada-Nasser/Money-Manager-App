@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.expensestracker.mainactivity.fragments.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/month_s_expenses"
         tools:layout="@layout/fragment_home" />
 
     <fragment
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_budgetPlanner"
-        android:name="com.example.expensestracker.mainactivity.fragments.budgetplanner.BudgetPlannerFragment"
+        android:name="com.example.expensestracker.budgetplanner.ui.BudgetPlannerFragment"
         android:label="@string/budget_planner"
         tools:layout="@layout/fragment_budget_planner" />
 

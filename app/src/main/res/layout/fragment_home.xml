@@ -35,7 +35,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="17dp"
-            android:text="Your Expenses this month"
+            android:text="@string/your_expenses_this_month"
             android:textAlignment="center"
             android:textSize="12.0sp" />
     </RelativeLayout>

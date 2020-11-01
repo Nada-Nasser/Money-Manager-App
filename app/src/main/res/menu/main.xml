@@ -10,9 +10,9 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/add_Budget"
+        android:id="@+id/user_wallet"
         android:icon="@android:drawable/ic_input_add"
-        android:title="@string/add_budget_category"
+        android:title="@string/my_wallet"
         app:showAsAction="never"/>
 
     <item

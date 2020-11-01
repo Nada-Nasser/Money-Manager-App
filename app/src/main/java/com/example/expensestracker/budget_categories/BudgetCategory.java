@@ -2,14 +2,38 @@ package com.example.expensestracker.budget_categories;
 
 public class BudgetCategory
 {
+    private int ID;
     private String name;
     private double maxBudget;
     private double currentBudget;
 
+    /*
     public BudgetCategory(String name, double maxBudget) {
         this.name = name;
         this.maxBudget = maxBudget;
         currentBudget = 0;
+    }
+*/
+    public BudgetCategory(int ID, String name, double maxBudget) {
+        this.ID = ID;
+        this.name = name;
+        this.maxBudget = maxBudget;
+        this.currentBudget = 0;
+    }
+
+    public BudgetCategory(int ID, String name, double maxBudget, double currentBudget) {
+        this.ID = ID;
+        this.name = name;
+        this.maxBudget = maxBudget;
+        this.currentBudget = currentBudget;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getName() {

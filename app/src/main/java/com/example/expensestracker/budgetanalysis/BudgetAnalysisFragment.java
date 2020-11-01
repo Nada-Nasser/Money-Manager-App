@@ -52,12 +52,6 @@ public class BudgetAnalysisFragment extends Fragment {
                 data.add(new ValueDataEntry(key, intValue));
                 Log.i("onCreateView", "onCreateView: " + intValue);
             }
-       /*
-        data.add(new ValueDataEntry("Apples", 6371664));
-        data.add(new ValueDataEntry("Pears", 789622));
-        data.add(new ValueDataEntry("Bananas", 7216301));
-        data.add(new ValueDataEntry("Grapes", 1486621));
-        data.add(new ValueDataEntry("Oranges", 1200000));*/
 
             buildAnalysisChart(anyChartView, "Your Monthly Expenses Analysis", "Budget Categories"
                     , data);

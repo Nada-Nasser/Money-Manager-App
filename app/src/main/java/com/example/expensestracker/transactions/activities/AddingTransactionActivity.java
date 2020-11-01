@@ -15,6 +15,7 @@ import com.example.expensestracker.budget_categories.BudgetCategory;
 import com.example.expensestracker.budget_categories.BudgetCategoryManager;
 import com.example.expensestracker.transactions.Transaction;
 import com.example.expensestracker.transactions.TransactionManager;
+import com.example.expensestracker.usermoney.UserWallet;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -52,23 +53,35 @@ public class AddingTransactionActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-
     }
 
     public void onClickAddTransaction(View view)
     {
         try {
-            Date transactionDate = getDateFromDatePicker();
-            BudgetCategory budgetCategory = BudgetCategoryManager.
-                    getBudgetCategory(productCategorySpinner.getSelectedItem().toString());
+            if(UserWallet.getUserMoney() > 0) {
 
-            String productName = productNameTextField.getText().toString();
-            double productPrice = Double.parseDouble(productPriceTextField.getText().toString());
+                Date transactionDate = getDateFromDatePicker();
+                Date currentDate = Calendar.getInstance().getTime();
 
-            Transaction transaction = new Transaction(budgetCategory , productName,productPrice , transactionDate);
-            TransactionManager.addNewTransaction(transaction);
+                BudgetCategory budgetCategory = BudgetCategoryManager.
+                        getBudgetCategoryByName(productCategorySpinner.getSelectedItem().toString());
 
-            makeLongToast(transaction.toString());
+                String productName = productNameTextField.getText().toString();
+                double productPrice = Double.parseDouble(productPriceTextField.getText().toString());
+
+
+                Transaction transaction = new Transaction(budgetCategory.getID(), productName, productPrice, transactionDate);
+                TransactionManager.addNewTransaction(transaction);
+
+                makeLongToast(transaction.toString());
+
+                UserWallet.takeFromWallet(productPrice);
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext() , "Your Wallet is empty, " +
+                        "You can not buy anything for now",Toast.LENGTH_LONG).show();
+            }
             finish();
         }
         catch (Exception e)

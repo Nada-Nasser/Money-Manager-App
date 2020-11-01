@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/header_tv"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/your_wallet"
+        android:background="@color/colorPrimary"
+        android:layout_margin="0dp"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textColor="#fff"
+        android:gravity="center"/>
+
+
+    <TextView
+        android:id="@+id/user_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="15dp"
+        android:text="$ 0.0"
+        android:textAlignment="center"
+        android:textSize="20.0dp"
+        android:textColor="#000" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/close_button"
+        android:padding="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/close"
+        android:textAllCaps="false"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        android:textSize="20.0dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>

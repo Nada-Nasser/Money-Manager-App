@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:icon="@drawable/ic_dollar"
+            android:title="@string/month_s_expenses" />
 
         <item
             android:id="@+id/nav_budgetManager"
-            android:icon="@drawable/ic_dollar"
+            android:icon="@drawable/categories"
             android:title="@string/budget_manager" />
 
         <item
             android:id="@+id/nav_budget_analysis"
-            android:icon="@drawable/ic_dollar"
+            android:icon="@drawable/trending"
             android:title="@string/budget_analysis" />
 
         <item
             android:id="@+id/nav_budgetPlanner"
-            android:icon="@drawable/ic_dollar"
+            android:icon="@drawable/plan"
             android:title="@string/budget_planner" />
 
 
