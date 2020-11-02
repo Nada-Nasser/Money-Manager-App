@@ -73,8 +73,7 @@ public class PlansListAdapter extends BaseAdapter {
 
         if (plan.getDeadline().compareTo(Calendar.getInstance().getTime()) < 0)
         {
-            // TODO UNCOMMENT THIS LINE
-        //    planCardLayout.setBackgroundResource(R.color.worryColor);
+            planCardLayout.setBackgroundResource(R.color.worryColor);
         }
 
 

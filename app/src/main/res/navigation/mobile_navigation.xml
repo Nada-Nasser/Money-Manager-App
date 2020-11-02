@@ -29,4 +29,12 @@
         android:label="@string/budget_analysis"
         tools:layout="@layout/fragment_budget_planner" />
 
+    <fragment
+        android:id="@+id/nav_monthly_expenses_analysis"
+        android:name="com.example.expensestracker.monthestracker.ui.MonthlyExpensesAnalysisFragment"
+        android:label="@string/your_monthly_expenses_analysis"
+        tools:layout="@layout/fragment_monthly_expenses_analysis" />
+
+
+
 </navigation>

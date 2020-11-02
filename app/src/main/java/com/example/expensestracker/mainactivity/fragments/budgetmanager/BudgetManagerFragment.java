@@ -20,13 +20,13 @@ import com.example.expensestracker.budget_categories.ui.BudgetCategoryInfoFragme
 import com.example.expensestracker.R;
 import com.example.expensestracker.budget_categories.BudgetCategory;
 import com.example.expensestracker.budget_categories.BudgetCategoryManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 public class BudgetManagerFragment extends Fragment {
 
     ListView budgetCategoryListView;
-    Button addCategoryButton;
 
     static BudgetManagerListAdapter budgetManagerListAdapter;
     ArrayList<BudgetCategory> budgetCategories;
@@ -42,7 +42,6 @@ public class BudgetManagerFragment extends Fragment {
         fragmentActivity = (FragmentActivity) getActivity();
         try {
             budgetCategoryListView = root.findViewById(R.id.budget_manager_lv);
-            addCategoryButton = root.findViewById(R.id.add_category_button);
 
             budgetCategories = new ArrayList<>();
             budgetCategories = BudgetCategoryManager.getBudgetCategories();
@@ -60,9 +59,11 @@ public class BudgetManagerFragment extends Fragment {
                 }
             });
 
-            addCategoryButton.setOnClickListener(new View.OnClickListener() {
+            FloatingActionButton fab = root.findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                     addNewBudgetCategory();
                 }
             });

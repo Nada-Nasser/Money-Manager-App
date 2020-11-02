@@ -29,6 +29,7 @@ public class DatabaseManager
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase)
         {
+            sqLiteDatabase.execSQL(MonthlyExpensesTable.createMonthlyExpensesTableSQLQuery);
             sqLiteDatabase.execSQL(PlansTable.createPlansTableSQLQuery);
             sqLiteDatabase.execSQL(BudgetCategoriesTable.createBudgetCategoryTableSQLQuery);
             sqLiteDatabase.execSQL(TransactionsTable.createTransactionTableSQLQuery);
@@ -39,6 +40,7 @@ public class DatabaseManager
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1)
         {
+            sqLiteDatabase.execSQL(MonthlyExpensesTable.DropMonthlyExpensesTable);
             sqLiteDatabase.execSQL(PlansTable.DropPlansTable);
             sqLiteDatabase.execSQL(TransactionsTable.DropTransactionsTable);
             sqLiteDatabase.execSQL(BudgetCategoriesTable.DropBudgetCategoriesTable);
@@ -52,7 +54,6 @@ public class DatabaseManager
         DBHelper dbHelper = new DBHelper(context);
         sqLiteDatabase = dbHelper.getWritableDatabase();
     }
-
 
     public long insert(String tableName , ContentValues contentValues)
     {

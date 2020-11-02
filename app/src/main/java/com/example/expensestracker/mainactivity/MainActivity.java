@@ -14,6 +14,7 @@ import com.example.expensestracker.budgetplanner.PlansManager;
 import com.example.expensestracker.dbmanagment.BudgetCategoriesTable;
 import com.example.expensestracker.dbmanagment.DatabaseController;
 import com.example.expensestracker.globalOperations.DateStringFormatter;
+import com.example.expensestracker.monthestracker.MonthExpenses;
 import com.example.expensestracker.monthestracker.MonthsTracker;
 import com.example.expensestracker.transactions.TransactionManager;
 import com.example.expensestracker.transactions.activities.AddingTransactionActivity;
@@ -53,23 +54,11 @@ public class MainActivity extends AppCompatActivity {
             PlansManager.loadPlans();
             UserWallet.loadUserMoney(this);
 
-
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-
-                    Intent intent = new Intent(getApplicationContext(), AddingTransactionActivity.class);
-                    startActivity(intent);
-                }
-            });
-
+            //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            //      .setAction("Action", null).show();
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             NavigationView navigationView = findViewById(R.id.nav_view);
@@ -77,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
             // Passing each menu ID as a set of Ids because each
             // menu should be considered as top level destinations.
             mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_home, R.id.nav_budgetManager , R.id.nav_budget_analysis ,R.id.nav_budgetPlanner)
+                    R.id.nav_home, R.id.nav_budgetManager , R.id.nav_budget_analysis ,R.id.nav_budgetPlanner
+                    ,R.id.nav_monthly_expenses_analysis)
                     .setDrawerLayout(drawer)
                     .build();
 

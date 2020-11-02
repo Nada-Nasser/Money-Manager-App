@@ -1,6 +1,7 @@
 package com.example.expensestracker.mainactivity.fragments.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import com.example.expensestracker.R;
 import com.example.expensestracker.budget_categories.BudgetCategory;
 import com.example.expensestracker.budget_categories.BudgetCategoryManager;
 import com.example.expensestracker.budget_categories.ui.BudgetCategoryListAdapter;
+import com.example.expensestracker.transactions.activities.AddingTransactionActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -34,6 +37,19 @@ public class HomeFragment extends Fragment {
 
         totalExpensesTextView = root.findViewById(R.id.total_expenses);
         budgetCategoryListView = root.findViewById(R.id.budget_category_lv);
+
+        FloatingActionButton fab = root.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //      .setAction("Action", null).show();
+
+                Intent intent = new Intent(context, AddingTransactionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         budgetCategories = new ArrayList<>();
         budgetCategories = BudgetCategoryManager.getBudgetCategories();

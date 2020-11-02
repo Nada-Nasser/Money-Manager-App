@@ -63,6 +63,8 @@ public class AddingTransactionActivity extends AppCompatActivity {
                 Date transactionDate = getDateFromDatePicker();
                 Date currentDate = Calendar.getInstance().getTime();
 
+                // TODO : dont allow future transactions
+
                 BudgetCategory budgetCategory = BudgetCategoryManager.
                         getBudgetCategoryByName(productCategorySpinner.getSelectedItem().toString());
 

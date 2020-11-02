@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Money Manager</string>
+    <string name="app_name">Money Manager</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -37,7 +37,7 @@
     <string name="money_amount">Money Amount</string>
     <string name="your_wallet">Your Wallet</string>
     <string name="close">Close</string>
-    <string name="my_wallet">My Wallet</string>
+    <string name="my_wallet">Your Wallet</string>
     <string name="your_wallet_contains_enough_money_for_this_plan">Your wallet contains enough money for this plan</string>
     <string name="the_deadline_of_this_plan_has_passed">the deadline of this plan has passed</string>
     <string name="plan_title">Plan Title</string>
@@ -50,5 +50,10 @@
     <string name="your_expenses_this_month">Your Expenses this month</string>
     <string name="month_s_expenses">Month\'s Expenses</string>
     <string name="new_app_name">Money Manager</string>
+    <string name="your_monthly_expenses_analysis">Monthly Expenses Analysis</string>
+    <string name="new_budget_category">New Budget Category</string>
+    <string name="plan_info">Plan Info</string>
+    <string name="your_expenses">Your Expenses</string>
+    <string name="new_transaction">Add New Transaction</string>
 
 </resources>

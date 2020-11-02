@@ -20,6 +20,7 @@ import com.example.expensestracker.R;
 import com.example.expensestracker.budgetplanner.Plan;
 import com.example.expensestracker.budgetplanner.PlansManager;
 import com.example.expensestracker.budgetplanner.activities.PlanInfoActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -30,8 +31,6 @@ public class BudgetPlannerFragment extends Fragment
     static PlansListAdapter plansListAdapter;
     ArrayList<Plan> plansList;
 
-    Button addPlanButton;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,7 +40,6 @@ public class BudgetPlannerFragment extends Fragment
 
 
         plansListView = root.findViewById(R.id.plans_lv);
-        addPlanButton = root.findViewById(R.id.addplanBu);
 
         plansList = new ArrayList<>();
         plansList = PlansManager.getPlansList();
@@ -51,9 +49,11 @@ public class BudgetPlannerFragment extends Fragment
         plansListView.setAdapter(plansListAdapter);
         plansListAdapter.notifyDataSetChanged();
 
-        addPlanButton.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = root.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startPlanActivity();
             }
         });
